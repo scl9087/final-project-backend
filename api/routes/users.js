@@ -41,8 +41,15 @@ router.delete('/:userId/posts/:postId', isLoggedIn, isSameUser, async (req, res,
 
   const query = { _id: req.params.userId }
   const user = await User.findOne(query)
-  const post = user.posts.find(post => post.id(req.params.postId))
-
+  
+  // const post = user.posts.find(post => post._id.toString() === req.params.postId)
+  
+  // const post = user.posts.find(post => {
+  //   return post._id.toString() === req.params.postId
+  // })
+  
+  const post = user.posts.id(req.params.postId)
+  console.log(user)
   post.remove()
   await user.save()
 
