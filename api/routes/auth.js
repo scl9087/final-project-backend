@@ -74,9 +74,17 @@ router.post('/signup', async (req, res, next) => {
   }
 
   const status = 201
-  const user = await User.create({ email, password: hashed, first_name, last_name })
-  const token = generateToken(user._id)
-  res.status(status).json({ status, token })
+  try {
+    const user = await User.create({ email, password: hashed, first_name, last_name })
+    const token = generateToken(user._id)
+    res.status(status).json({ status, token })
+  } catch (e) {
+    console.error(e)
+    const error = new Error('Please enter required information.')
+    error.status = 400
+    next(error)
+  }
+  
 })
 
 module.exports = router

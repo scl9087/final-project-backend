@@ -12,7 +12,9 @@ const schema = new mongoose.Schema({
   project_link: {
     type: String,
     required: true
-  }
+  },
+  score: Number,
+  points_possible: Number
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } })
 
 module.exports = schema
