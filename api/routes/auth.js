@@ -37,29 +37,6 @@ router.post('/login', async (req, res, next) => {
   next(error)
 })
 
-// router.post('/login', async (req, res, next) => {
-//   const status = 201
-//   try {
-//     const { email, password } = req.body
-//     const user = await User.findOne({ email })
-//     if (user) {
-//       const valid = await bcrypt.compare(password, user.password)
-//       if (valid) {
-//         const status = 200
-//         const response = 'You have successful logged in.'
-//         const token = generateToken(user._id)
-//         return res.status(status).json({ status, response, token })
-//       }
-//     }
-//   } catch (e) {
-//     console.error(e)
-//     const message = `User email or password incorrect. Please check credentials and try again.`
-//     const error = Error(message)
-//     error.status = 401
-//     next(error)
-//   }
-// })
-
 router.post('/signup', async (req, res, next) => {
   const { email, password, first_name, last_name } = req.body
   const rounds = 10
@@ -75,7 +52,7 @@ router.post('/signup', async (req, res, next) => {
 
   const status = 201
   try {
-    const user = await User.create({ email, password: hashed, first_name, last_name })
+    const user = await User.create({ email, password: hashed, first_name, last_name, admin:false })
     const token = generateToken(user._id)
     res.status(status).json({ status, token })
   } catch (e) {
