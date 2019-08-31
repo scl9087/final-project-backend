@@ -35,4 +35,20 @@ router.delete('/:userId', isLoggedIn, isSameUser, async (req, res, next) => {
   res.json({ status, response })
 })
 
+// router.put('/graded', isLoggedIn, async (req, res, next) => {
+//   const status = 200
+
+//   const { assignmentId, userId } = req.params
+//   const query = { _id: userId }
+//   const user = await User.findOne(query)
+//   const assignment = user.assignments.id(assignmentId)
+ 
+//   const { score, points_possible } = req.body
+//   assignment.score = score
+//   assignment.points_possible = points_possible
+//   await user.save()
+  
+//   res.status(status).json({ status, response: assignment })
+// })
+
 module.exports = router
