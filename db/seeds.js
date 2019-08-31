@@ -10,8 +10,8 @@ const reset = async () => {
   await User.deleteMany() // Deletes all records
   return User.create([
     {
-      first_name: 'Student',
-      last_name: 'User',
+      first_name: 'Amos',
+      last_name: 'Burton',
       email: 'student@email.com',
       password: bcrypt.hashSync('password', 10),
       admin: false,

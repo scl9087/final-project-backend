@@ -4,11 +4,12 @@ const Assignment = require('./assignment')
 const schema = mongoose.Schema({
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    minlength: 8
   },
   first_name: {
     type: String,
