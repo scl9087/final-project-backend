@@ -1,5 +1,5 @@
 // const { NODE_ENV, PORT } = process.env
-const { BASE_URL, NODE_ENV, PORT } = process.env
+const { CLIENT_BASE_URL, NODE_ENV, PORT } = process.env
 const express = require('express')
 var cors = require('cors')
 const app = express()
@@ -17,7 +17,7 @@ app.use(require('./api/middleware/set-token'))
 // CORS Access
 app.use(require('cors')({
   // origin: 'http://localhost:3000',
-  origin: BASE_URL,
+  origin: CLIENT_BASE_URL,
   optionsSuccessStatus: 200
 }))
 
