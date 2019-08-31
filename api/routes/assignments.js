@@ -2,7 +2,6 @@ const router = require('express').Router({ mergeParams: true })
 const User = require('../models/user')
 const { isLoggedIn, isSameUser } = require('../middleware/auth')
 
-
 router.post('/', isLoggedIn, isSameUser, async (req, res, next) => {
   const status = 201
 
