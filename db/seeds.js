@@ -52,8 +52,6 @@ const reset = async () => {
           title: 'Be Calm and Collected',
           project_link: 'http://url.com',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida tincidunt tellus, vel vehicula turpis euismod a. Nulla lobortis mi nec sagittis hendrerit. Sed ultrices metus ut eros interdum, vel blandit mi lacinia.',
-          score: 54,
-          points_possible: 100
         }
       ]
     },
@@ -110,8 +108,6 @@ const reset = async () => {
           title: 'Stir the Pot',
           project_link: 'http://url.com',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida tincidunt tellus, vel vehicula turpis euismod a. Nulla lobortis mi nec sagittis hendrerit. Sed ultrices metus ut eros interdum, vel blandit mi lacinia.',
-          score: 98,
-          points_possible: 100
         }
       ]
     },
@@ -127,8 +123,6 @@ const reset = async () => {
           title: 'Bench Press 10 Dudes',
           project_link: 'http://url.com',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida tincidunt tellus, vel vehicula turpis euismod a. Nulla lobortis mi nec sagittis hendrerit. Sed ultrices metus ut eros interdum, vel blandit mi lacinia.',
-          score: 100,
-          points_possible: 100
         }
       ]
     },
