@@ -49,6 +49,34 @@ router.post('/signup', async (req, res, next) => {
 
     return next(error)
   }
+  
+  if (req.body.password.length < 8) {
+    const error = new Error(`Your password must be at least 8 characters.`)
+    error.status = 400
+
+    return next(error)
+  }
+
+  if (req.body.first_name.length === 0) {
+    const error = new Error(`First name is required.`)
+    error.status = 400
+
+    return next(error)
+  }
+
+  if (req.body.last_name.length === 0) {
+    const error = new Error(`Last name is required.`)
+    error.status = 400
+
+    return next(error)
+  }
+
+  if (req.body.email.length === 0) {
+    const error = new Error(`Email is required.`)
+    error.status = 400
+
+    return next(error)
+  }
 
   const status = 201
   try {
